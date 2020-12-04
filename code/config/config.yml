@@ -1,0 +1,47 @@
+# paths:
+repo_path:           ECT_FYP/
+utils_path:          python/utils/
+
+# path to models (relative to demo.py)
+models_path:         '../models/'
+
+### NOTE:            these are all specified relative to the location of main.py
+
+# data paths:
+## en data:
+conll_path:          '../data/en/CONLL2003/'
+ee_path:             '../data/en/emerging_entities_17/'
+en_combined_path:    '../data/'
+
+# language-specific parameters for training stage
+en:
+  train_data_path:   "../data/train.txt"
+  dev_data_path:     "../data/valid.txt"
+  test_data_path:    "../data/test.txt"
+  label_types:
+    - "B-PER"
+    - "I-PER"
+    - "B-LOC"
+    - "I-LOC"
+    - "B-ORG"
+    - "I-ORG"
+    - "B-MISC"
+    - "I-MISC"
+    - "B-MED"
+    - "I-MED"
+    - "O"
+  model:             'bert-base-cased'
+
+demo_text:
+  en:                My name is Bob Ng. I worked at Temasek Holdings. I suddenly suffered from Heart failure. My current location is Ngee Ann City shopping mall at Orchard road. Please send ambulance! Thank you!
+
+parallel_demo_text:
+  en:                Just last December, fellow economists Martin Feldstein and Nouriel Roubini each penned op-eds bravely questioning bullish market sentiment, sensibly pointing out gold’s risks.
+
+# pred_type: [dark_highlight, light_highlight]
+demo_colors:
+  per: ["#17becf", "#9edae5"] # blues
+  org: ["#9467bd", "#c5b0d5"] # purples
+  loc: ["#74c476", "#c7e9c0"] # greens
+  misc: ["#e8b844", "#f5d97e"] # yellows
+  medical: ["#e377c2", "#f7b6d2"] # pinks
