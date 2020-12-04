@@ -4,11 +4,11 @@
 
 Clone or download the repo to your machine.
 
-Use `conda` to create the virtual environment - currently environment creation via `pip3` is not supported. Navigate to the `SCDF_NER_FYP` directory and run the following in the command line:
+Use `conda` to create the virtual environment - currently environment creation via `pip3` is not supported. Navigate to the `ECT_FYP` directory and run the following in the command line:
 
 `conda env create -f environment.yml`
 
-You can verify that the required packages installed correctly by activating the environment (`conda activate m_ner`) and running `conda list`.
+You can verify that the required packages installed correctly by activating the environment (`conda activate ect_ner`) and running `conda list`.
 
 #### Dependencies
 
@@ -16,13 +16,21 @@ Major dependencies include `pytorch-transformers`, `spacy`, and `streamlit`. Tak
 
 ## Usage
 
+### Data Augmentation
+
+Run the "data_augmentation.ipynb" Python Notebook to run the data augmentation. Change the model if needed.
+
+### Combining and Annotating of the three dataset
+
+Run the "combine_annotate.ipynb" Python Notebook to combine the data.
+
 ### Training a model
 
 Use `python3 main.py` to train an English model and save per-epoch checkpoints.
 
 **Before training a model:** run `python3 -m spacy download en_core_web_lg` before running the main script.
 
-### Demo for monolingual NER
+### Demo for NER
 
 Once you have a usable model checkpoint, run `streamlit run demo.py en`, which opens a web app you can use to test the model's predictions interactively. Be sure to download `en_core_web_lg` before running the demo.
 
