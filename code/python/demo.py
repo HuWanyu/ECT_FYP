@@ -37,7 +37,7 @@ if __name__ == "__main__":
         type=str,
         default="en",
         choices="en",
-        help="en to load an English model,
+        help="en to load an English model",
     )
     parser.add_argument(
         "-cfg",
@@ -105,7 +105,7 @@ if __name__ == "__main__":
         "Location": "loc",
         "Organization": "org",
         "Misc": "misc",
-		"MEDICAL": "medical",
+        "MEDICAL": "medical",
     }
     display = produce_text_display(viz_df, color_dict)
     explainer = create_explainer(color_dict, ent_dict)
@@ -124,4 +124,4 @@ if __name__ == "__main__":
 
     # Display fine-grained model prediction columns for selected entity
     mask = viz_df[f"pred_sum_{ent}"].values > 0
-    st.table(viz_df[mask][["text", f"b_pred_{ent}""]])
+    st.table(viz_df[mask][["text", f"b_pred_{ent}"]])
